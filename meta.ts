@@ -2,13 +2,14 @@ export interface VendorSkillMeta {
   official?: boolean;
   source: string;
   skills: Record<string, string>; // sourceSkillName -> outputSkillName
+  pathPrefix?: string; // Optional path prefix for skills directory (e.g., "packages/skills/skills/")
 }
 
 /**
  * Repositories to clone as submodules
  */
 export const submodules = {
-  slidev: "https://github.com/slidevjs/slidev",
+  remotion: "https://github.com/remotion-dev/remotion",
   ai: "https://github.com/vercel/ai",
   anthropics: "https://github.com/anthropics/skills",
   turborepo: "https://github.com/vercel/turborepo",
@@ -19,10 +20,11 @@ export const submodules = {
  * Already generated skills, sync with their `skills/` directory
  */
 export const vendors: Record<string, VendorSkillMeta> = {
-  slidev: {
-    source: "https://github.com/slidevjs/slidev",
+  remotion: {
+    source: "https://github.com/remotion-dev/remotion",
+    pathPrefix: "packages/skills/skills/",
     skills: {
-      slidev: "slidev",
+      remotion: "remotion",
     },
   },
   ai: {

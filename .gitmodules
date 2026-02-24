@@ -1,6 +1,6 @@
-[submodule "vendor/slidev"]
-	path = vendor/slidev
-	url = https://github.com/slidevjs/slidev
+[submodule "vendor/remotion"]
+	path = vendor/remotion
+	url = https://github.com/remotion-dev/remotion
 [submodule "vendor/ai"]
 	path = vendor/ai
 	url = https://github.com/vercel/ai

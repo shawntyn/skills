@@ -37,7 +37,9 @@ function syncSkills() {
     
     const vendorSkills = config.skills as Record<string, string>;
     for (const [sourceSkillName, outputSkillName] of Object.entries(vendorSkills)) {
-      const sourcePath = join(process.cwd(), "vendor", vendorName, "skills", sourceSkillName);
+      // Use pathPrefix if provided, otherwise default to "skills/"
+      const prefix = config.pathPrefix || "skills/";
+      const sourcePath = join(process.cwd(), "vendor", vendorName, prefix, sourceSkillName);
       const destPath = join(skillsDir, outputSkillName);
       
       if (!existsSync(sourcePath)) {
